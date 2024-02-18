@@ -37,11 +37,13 @@ jobs:
             then
               git checkout "$branch"
               echo "Checked out branch: $branch"
-              git merge "$main"
-              git pull
-              echo "Merged $main branch onto $branch"
-              git push origin "$branch"
-              echo "Pushed $branch"
+              set +e
+              git merge "$main" \
+              && git pull \
+              && echo "Merged $main branch into $branch" \
+              && git push origin "$branch" \
+              && echo "Pushed $branch"
+              set -e
             else
               echo "Skipping $branch (default or HEAD)"
             fi
