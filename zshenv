@@ -111,3 +111,5 @@ find "$(dirname -- "$0")" -name '.zshenv.*' -print0 | while read -d $'\0' file; 
   source "$file"
 done
 unset file
+
+export GPG_TTY="$(tty)"
