@@ -10,7 +10,7 @@
 	bigbang = checkout --orphan
 	remotes = remote -v
 	set-to-remote = "!f() { git fetch && git reset --hard FETCH_HEAD; }; f"
-	direct = "!f() { git push --force-with-lease origin \"$1:$(git rev-parse --abbrev-ref HEAD)\"; }; f"
+	remote-reset = "!f() { git push --force-with-lease origin \"$1:$(git rev-parse --abbrev-ref HEAD)\"; }; f"
 	unchange = update-index --assume-unchanged
 	shallow = "!f() { printf 'Enter to continue '; read _; git pull --depth 1; git gc --prune=all; }; f"
 

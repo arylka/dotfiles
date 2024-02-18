@@ -87,6 +87,9 @@ alias grhs='git reset --soft'
 alias 'grh!'="git reset --hard"
 unalias grhh 2>/dev/null
 
+# git remote-reset
+alias grr='git remote-reset'
+
 ## utilities
 
 # open with system default application
