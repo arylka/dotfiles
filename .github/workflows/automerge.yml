@@ -27,7 +27,7 @@ jobs:
           do
             branch="${branch#origin/}"
             echo "Checking $branch"
-            if grep -xv -e "$main" -e "HEAD" <(echo "$branch")
+            if echo "$branch" | grep -xv -e "$main" -e "HEAD"
             then
               git checkout "$branch"
               echo "Checked out branch: $branch"
