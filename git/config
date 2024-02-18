@@ -1,7 +1,7 @@
 [user]
-	name = Marc Cornellà
-	email = marc@mcornella.com
-	signingkey = BECEDE269494D43587316473C41186BCE5AB6ED9
+	name = bswck
+	email = bswck.dev@gmail.com
+	signingkey = B5690EEEBB952194
 
 [commit]
 	gpgsign = true
@@ -17,7 +17,6 @@
 	ui = true
 
 [init]
-	templateDir = ~/.config/git/template/
 	defaultBranch = main
 
 [push]
@@ -32,6 +31,7 @@
 [core]
 	pager = less -S -x1,5
 	whitespace = blank-at-eol,space-before-tab
+	excludesfile = ~/.gitignore_global
 
 [help]
 	autocorrect = 1
@@ -51,6 +51,9 @@
 [reset]
 	quiet = true
 
+[rerere]
+	enabled = true
+
 [include]
 	path = ~/.config/git/config.inc
 
@@ -60,3 +63,6 @@
 
 [credential "https://github.com"]
 	helper = !/usr/bin/gh auth git-credential
+
+[url "https://github.com/"]
+	insteadOf = gh://
