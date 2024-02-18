@@ -52,6 +52,7 @@ plugins=(
   git-prompt
   ragequit
   zsh-no-ps2
+  zsh-autosuggestions
   # add_plugins from the command line
   $add_plugins
 )
