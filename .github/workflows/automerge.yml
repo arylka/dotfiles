@@ -5,6 +5,10 @@ on:
     branches:
     - "device/cerebro"
 
+env:
+  USERNAME: "github-actions[bot]"
+  EMAIL: "64036239+bswck@users.noreply.github.com"
+
 permissions:
   contents: "write"
 
@@ -20,6 +24,8 @@ jobs:
         shell: "bash"
         run: |
           set -eEuo pipefail
+          git config user.name "$USERNAME"
+          git config user.email "$EMAIL"
           main="$(git rev-parse --abbrev-ref HEAD)"
           echo "Main branch: $main"
           readarray -t branches <<< $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/device/)
