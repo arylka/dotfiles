@@ -1,7 +1,7 @@
 [user]
 	name = bswck
 	email = bswck.dev@gmail.com
-	signingkey = B5690EEEBB952194
+	signingkey = FEF4690DDFBE68F4
 
 [commit]
 	gpgsign = true
