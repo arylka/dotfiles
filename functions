@@ -121,3 +121,19 @@ zsh_test_versions() {
     sleep 0.2
   done
 }
+
+ruff_typechecking() {
+    ruff check "$@" --select=TCH --exclude=tests
+}
+
+ruff_annotations() {
+    ruff check "$@" --select=ANN,RUF012 --ignore=ANN101,ANN102,ANN401 --exclude=tests
+}
+
+ruff_imports() {
+    ruff check "$@" --select=I001,F401 --exclude=tests
+}
+
+ruff_docstrings() {
+    ruff check "$@" --select=D --ignore=D203,D212 --exclude=tests
+}
