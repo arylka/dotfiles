@@ -2,6 +2,7 @@ A fork of [mcornella](https://github.com/mcornella)'s great dotfiles I adopted f
 
 ## Requirements
 - git
+- diff-highlight (`pipx install diff-highlight`)
 - zsh installed and set up (`sudo nala install zsh && chsh -s $(which zsh)`)
 
 ## Usage
