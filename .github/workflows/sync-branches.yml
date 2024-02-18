@@ -2,7 +2,7 @@ name: "Sync branches"
 on:
   push:
     branches:
-    - "cerebro"
+    - "device/cerebro"
 
 jobs:
   sync:
@@ -12,4 +12,5 @@ jobs:
     steps:
     - uses: "tibdex/sync-branches@v1"
       with:
+        branches_pattern: "device/*"
         github_token: "${{ secrets.GITHUB_TOKEN }}"
