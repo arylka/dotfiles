@@ -13,7 +13,7 @@ permissions:
   contents: "write"
 
 jobs:
-  sync:
+  merge-all:
     runs-on: "ubuntu-latest"
     steps:
       - name: "Checkout"
