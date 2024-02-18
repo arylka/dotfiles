@@ -1,4 +1,4 @@
-A fork of [mcornella](https://github.com/mcornella)'s dotfiles I adopted for personal use.
+A fork of [mcornella](https://github.com/mcornella)'s great dotfiles I adopted for personal use.
 
 ## Requirements
 
