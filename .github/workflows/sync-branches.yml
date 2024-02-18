@@ -8,7 +8,8 @@ jobs:
   sync:
     name: "Sync branches"
     runs-on: "ubuntu-latest"
-    if: "!github.event.deleted"
+    if: >
+      !github.event.deleted
     steps:
     - uses: "tibdex/sync-branches@v1"
       with:
