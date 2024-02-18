@@ -38,6 +38,7 @@ jobs:
               git checkout "$branch"
               echo "Checked out branch: $branch"
               git rebase "$main"
+              git pull --rebase
               echo "Rebased $main branch onto $branch"
               git push origin "$branch"
               echo "Pushed $branch"
