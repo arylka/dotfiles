@@ -1,11 +1,8 @@
 A fork of [mcornella](https://github.com/mcornella)'s great dotfiles I adopted for personal use.
 
 ## Requirements
-
 - git
-- zsh installed and set up:
-  1. Install zsh (e.g. `sudo nala install zsh`)
-  2. Use zsh as default shell (e.g. `chsh -s $(which zsh)`)
+- zsh installed and set up (`sudo nala install zsh && chsh -s $(which zsh)`)
 
 ## Usage
 
