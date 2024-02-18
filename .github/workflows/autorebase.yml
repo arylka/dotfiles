@@ -1,4 +1,4 @@
-name: Auto-merge all device branches
+name: Automatically rebase all device branches onto device/cerebro
 
 on:
   push:
@@ -37,8 +37,8 @@ jobs:
             then
               git checkout "$branch"
               echo "Checked out branch: $branch"
-              git merge "$main"
-              echo "Merged $main branch into $branch"
+              git rebase "$main"
+              echo "Rebased $main branch onto $branch"
               git push origin "$branch"
               echo "Pushed $branch"
             else
