@@ -22,11 +22,12 @@ jobs:
           set -eEuo pipefail
           main="$(git rev-parse --abbrev-ref HEAD)"
           echo "Main branch: $main"
-          git pull origin
-          for branch in "$(git for-each-ref --format='%(refname:short)' refs/heads/device/)"
+          readarray -t branches <<< $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/device/)
+          for branch in "${branches[@]}"
           do
-            echo "Checking branch $branch"
-            if test "$branch" != "$main"
+            branch="${branch#origin/}"
+            echo "Checking $branch"
+            if grep -xv -e "$main" -e "HEAD" <(echo "$branch")
             then
               git checkout "$branch"
               echo "Checked out branch: $branch"
@@ -35,7 +36,7 @@ jobs:
               git push origin "$branch"
               echo "Pushed $branch"
             else
-              echo "Skipping branch $branch (main branch)"
+              echo "Skipping $branch (default or HEAD)"
             fi
           done
           echo "All device branches updated"
