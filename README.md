@@ -11,14 +11,14 @@
 
 1. Download or clone repository:
 
-  ```sh
-  git clone git@github.com:bswck/dotfiles --recurse-submodules
-  ```
+   ```sh
+   git clone git@github.com:bswck/dotfiles --recurse-submodules
+   ```
 
-  I personally use `gh`:
-  ```sh
-  gh repo clone bswck/dotflies -- --recurse-submodules
-  ```
+   I personally use `gh`:
+   ```sh
+   gh repo clone bswck/dotflies -- --recurse-submodules
+   ```
 
 2. Run init script: `./init.zsh`
 
