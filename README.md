@@ -1,11 +1,11 @@
+A fork of [mcornella](https://github.com/mcornella)'s dotfiles I adopted for personal use.
+
 ## Requirements
 
 - git
 - zsh installed and set up:
   1. Install zsh (e.g. `sudo nala install zsh`)
-  2. Use zsh as default shell: `chsh -s $(which zsh)`
-    * _Restart the user session to apply the change._
-    * _`chsh` doesn't work in every system._
+  2. Use zsh as default shell (e.g. `chsh -s $(which zsh)`)
 
 ## Usage
 
