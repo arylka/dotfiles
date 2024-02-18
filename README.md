@@ -9,7 +9,7 @@ A fork of [mcornella](https://github.com/mcornella)'s great dotfiles I adopted f
 
 ## Usage
 
-1. Download or clone repository:
+1. Clone this repository:
 
    ```sh
    git clone git@github.com:bswck/dotfiles --recurse-submodules
@@ -17,9 +17,9 @@ A fork of [mcornella](https://github.com/mcornella)'s great dotfiles I adopted f
 
    I personally use `gh`:
    ```sh
-   gh repo clone bswck/dotflies -- --recurse-submodules
+   gh repo clone bswck/dotfiles -- --recurse-submodules
    ```
 
-2. Run init script: `./init.zsh`
+2. Run the initialization script: `dotfiles/init.zsh`
 
 3. Restart the shell or run `exec zsh`
