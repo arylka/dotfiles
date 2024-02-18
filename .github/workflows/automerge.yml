@@ -1,4 +1,4 @@
-name: Automatically merge all device branches onto device/cerebro
+name: Automatically merge device/cerebro into all device branches
 
 on:
   push:
