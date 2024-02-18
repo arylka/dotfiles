@@ -13,17 +13,14 @@
 1. Download or clone repository:
 
   ```sh
-  git clone git@github.com:mcornella/dotfiles
+  git clone git@github.com:bswck/dotfiles --recurse-submodules
   ```
 
-2. Update git submodules:
-
+  I personally use `gh`:
   ```sh
-  cd dotfiles
-  git submodule init
-  git submodule update
+  gh repo clone bswck/dotflies -- --recurse-submodules
   ```
 
-3. Run init script: `./init.zsh`
+2. Run init script: `./init.zsh`
 
-4. Restart the shell or run `exec zsh`
+3. Restart the shell or run `exec zsh`
