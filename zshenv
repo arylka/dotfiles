@@ -117,3 +117,7 @@ export GPG_TTY="$(tty)"
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# WSL2 :)
+export PATH="$PATH:/mnt/c/Users/admin/Programs"
+export EDITOR="notepad.exe"
