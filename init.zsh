@@ -55,18 +55,18 @@ local ZDOT=".zsh"
 # Files to be symlinked to home directory
 local -A dotfiles
 dotfiles=(
-  aliases             "${ZDOT}/aliases"
-  dircolors           "${ZDOT}/dircolors"
-  functions           "${ZDOT}/functions"
-  git                 ".config/git"
-  ohmyzsh             "${ZDOT}/ohmyzsh"
-  ohmyzsh-custom      "${ZDOT}/ohmyzsh-custom"
-  tigrc               ".config/tig/config"
-  tmux.conf           ".tmux.conf"
-  toprc               ".config/procps/toprc"
-  vimrc               ".vimrc"
-  zshenv              "${ZDOT}/.zshenv"
-  zshrc               "${ZDOT}/.zshrc"
+  aliases               "${ZDOT}/aliases"
+  dircolors             "${ZDOT}/dircolors"
+  functions             "${ZDOT}/functions"
+  git                   ".config/git"
+  ohmyzsh               "${ZDOT}/ohmyzsh"
+  ohmyzsh-custom        "${ZDOT}/ohmyzsh-custom"
+  tigrc                 ".config/tig/config"
+  tmux.conf             ".tmux.conf"
+  toprc                 ".config/procps/toprc"
+  vimrc                 ".vimrc"
+  zshenv                "${ZDOT}/.zshenv"
+  zshrc                 "${ZDOT}/.zshrc"
 )
 
 local file src dest
@@ -140,3 +140,12 @@ EOF
 }
 
 mkdir -p "$HOME/.zsh/completions"
+
+PYTHONS=("${(@f)$(< python)}")
+
+for PYTHON in "${PYTHONS[@]}"
+do
+    echo "Installing Python $PYTHON... $(print -Pn "%F{yellow}[$(asdf install python latest:"$PYTHON")]%F{reset}")"
+done
+
+asdf global python "${PYTHONS[@]/#/latest:}" && echo "Installed all Python versions"

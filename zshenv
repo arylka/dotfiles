@@ -114,10 +114,13 @@ unset file
 
 export GPG_TTY="$(tty)"
 
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# pyenv (obsolete, moved to asdf)
+# Retaining the oldie anyway just in case:
+#  export PYENV_ROOT="$HOME/.pyenv"
+#  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+#  eval "$(pyenv init -)"
 
 # WSL2 :)
-export PATH="$PATH:/mnt/c/Users/admin/Programs"
+export WINDOWS_USER="$(basename "$(powershell.exe whoami | tr "\\\\" "/")")"
+export PATH="$PATH:/mnt/c/Users/$WINDOWS_USER/Programs"
 export EDITOR="notepad.exe"
