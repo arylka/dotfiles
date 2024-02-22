@@ -7,7 +7,7 @@
 #   Avoid syntax and commands not portable to other different setups,
 #   check out http://hyperpolyglot.org/unix-shells for more information
 
-# checks if argument exists in path
+# Checks if argument exists in PATH
 exists() { command -p -v &>/dev/null }
 is_zsh() { [ -n "$ZSH_VERSION" ] }
 is_darwin() { [ $(uname) = Darwin ] }
@@ -22,7 +22,7 @@ alias ll='l -lF'
 alias la='l -A'
 alias lla='ll -AF'
 
-# safe copy, move and delete
+# Safe copy, move and delete
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -I'
@@ -31,18 +31,18 @@ if is_darwin; then
     ! exists grm || alias rm='command grm -I'
 fi
 
-# directories
+# Directories
 unalias mkdir 2>/dev/null
 alias md='mkdir -p'
 alias rd='rmdir'
 alias po='popd'
 alias pu='pushd'
 
-# hdd
+# HDD
 is_darwin && alias df='df -h' || alias df='df -h -x squashfs'
 alias du='du -h'
 
-# summary of disk used by child items sorted and unsorted
+# Summary of disk used by child items sorted and unsorted
 alias dus='LANG=C du -s *'
 alias duss='dus | LANG=C sort -h'
 # disk space used by system folders
@@ -90,16 +90,16 @@ unalias grhh 2>/dev/null
 # git remote-reset
 alias grr='git remote-reset'
 
-## utilities
+## Utilities
 
-# open with system default application
+# Open with system default application
 alias o='open_command'
 alias o.='o .'
 
-# enable advanced calculation in bc by default
+# Enable advanced calculation in bc by default
 alias bc='bc -l'
 
-# default parameters for youtube-dl
+# Default parameters for youtube-dl
 alias ytdl='youtube-dl --prefer-ffmpeg -o "%(title)s.%(ext)s"'
 
 # terminating global aliases
@@ -114,7 +114,7 @@ is_zsh && {
     alias -g :NUL='&>/dev/null'
 }
 
-# ip command
+# IP command
 alias ip='ip -color'
 alias ipb='ip -color -brief'
 
@@ -124,5 +124,9 @@ alias vsc.='code-insiders .'
 alias ohmyzsh='vsc "$ZSH"'
 alias zshrc='vsc "${ZDOTDIR:-$HOME}/.zshrc"'
 
-# last exit status
+# Last exit status
 alias '?'='echo $?'
+
+# Activate Poetry virtual env
+alias a='source $(poetry env info -p)/bin/activate'
+alias post='poetry version ${1:-$(poetry version --short)} && git add -A && git commit -m "Post-bump to $(poetry version --short)"'
