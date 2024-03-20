@@ -141,7 +141,8 @@ ruff_docstrings() {
 
 motd_write() {
   echo "$1" > "$(date -I).md"
-  git commit -am "$(date +%A) wishes"
+  git add -A
+  git commit -m "$(date +%A) wishes"
   git push
 }
 
