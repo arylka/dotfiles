@@ -151,3 +151,6 @@ for file in "$ZDOTDIR"/.zshrc.^(bck|new)(N); do . "$file"; done; unset file
 # Created by `pipx` on 2024-02-21 02:42:21
 export PATH="$PATH:/home/bswck/.local/bin"
 
+# https://github.com/depot/cli
+export DEPOT_INSTALL_DIR="/home/bswck/.depot/bin"
+export PATH="$DEPOT_INSTALL_DIR:$PATH"
