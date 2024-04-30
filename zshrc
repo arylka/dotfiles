@@ -46,7 +46,6 @@ plugins=(
   fnm
   rust
   terraform
-  mise
   # custom plugins go here
   asdf
   fast-syntax-highlighting
