@@ -143,9 +143,9 @@ mkdir -p "$HOME/.zsh/completions"
 
 PYTHONS=("${(@f)$(< python)}")
 
-for PYTHON in "${PYTHONS[@]}"
-do
-    echo "Installing Python $PYTHON... $(print -Pn "%F{yellow}[$(asdf install python latest:"$PYTHON")]%F{reset}")"
-done
+# for PYTHON in "${PYTHONS[@]}"
+# do
+#     echo "Installing Python $PYTHON... $(print -Pn "%F{yellow}[$(asdf install python latest:"$PYTHON")]%F{reset}")"
+# done
 
 asdf global python "${PYTHONS[@]/#/latest:}" && echo "Installed all Python versions"
